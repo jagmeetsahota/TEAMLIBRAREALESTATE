@@ -312,23 +312,30 @@
         <p>A clean, premium first impression that encourages prospects to contact you by form, phone or email.</p>
       </div>
     </section>
+<div class="lead-form">
+  <input type="text" id="leadName" placeholder="Your Name" required>
+  <input type="tel" id="leadPhone" placeholder="Phone Number" required>
+  <input type="email" id="leadEmail" placeholder="Email Address" required>
+  <input type="text" id="leadNeed" placeholder="Buying / Selling / Investing">
+  <button onclick="sendLeadToWhatsApp()">Send on WhatsApp</button>
+</div>
 
+<script>
+function sendLeadToWhatsApp() {
+  const name = document.getElementById("leadName").value;
+  const phone = document.getElementById("leadPhone").value;
+  const email = document.getElementById("leadEmail").value;
+  const need = document.getElementById("leadNeed").value;
+
+  const message =
+    `Hi Jagmeet, my name is ${name}. Phone: ${phone}. Email: ${email}. I need help with ${need}.`;
+
+  const url = `https://wa.me/16479285800?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+</script>
     <div class="footer">
       RE/MAX introduced refreshed digital-first branding in 2025. Each office independently owned and operated.
     </div>
   </div>
 
-<style>
-.whatsapp-float{
-  position:fixed; right:22px; bottom:22px; z-index:9999;
-  background:#25D366; color:white; text-decoration:none;
-  padding:14px 18px; border-radius:999px;
-  font-weight:800; box-shadow:0 10px 30px rgba(0,0,0,.25);
-  font-family:Arial,sans-serif;
-}
-</style>
-
-<a class="whatsapp-float" href="https://wa.me/16479285800" target="_blank">WhatsApp Jagmeet</a>
-
-</body>
-</html>
